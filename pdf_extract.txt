@@ -1,0 +1,277 @@
+Page 1 of 8 
+ 
+ICOM6034 Website Engineering  
+Group Project Specifications 
+ 
+ 
+Objective 
+The objective of the group project is to implement a fully -functional Travel Ideas website by 
+using the technologies and the development methodologies introduced in this course.  The 
+project will constitute 60% of the course assessment. 
+ 
+Technologies and standards involved 
+Classmates might use any one of the following to implement the website. 
+ Laravel + jQuery + MySQL; or 
+ Any other popular client-side and server-side (MVC) frameworks, and DBMS 
+The first option (Laravel + jQuery + MySQL)  is recommended.  Other standards involved 
+include HTML5, CSS, JavaScript, etc. 
+ 
+Background 
+This website is designed for a group of friends to share travel ideas, their past travel 
+experiences and comments/thoughts within their circle. A user can post a new travel idea with 
+the planned destination and schedule. S/he can attach tags to his/her idea and others can 
+search the ideas by using those tags as keywords. The tags are also the keywords that can be 
+used for interacting with other web APIs through service mash -ups in the website. The mash -
+ups can help provide further information about the user’s planned trips; examples of such 
+information include but are not limited to hotel/flight information, weather, l ocal special 
+events or festivals, catering services, etc. For simplicity, we assume that all registered users 
+belong to the same group of friends, and this website supports a single group of friends only. 
+ 
+Specifications 
+A user has to log on (with his/her email address and password) in order to use the website’s 
+functions. A user who has not logged on should be prompted to sign in. An option should also 
+be available for new users to create an account. Upon successful login, the user should see a 
+welcome message with his or her name. The website should include the following functions. 
+ 
+Page 2 of 8 
+ 
+ 
+1. USER ACCOUNT CREATION 
+ Email address, password, and name are required.  
+ 
+2. MANAGE (ADD/DELETE/MODIFY) TRAVEL IDEAS 
+ The user can add a new travel idea with title, destination, start date, end date, and 
+tags. 
+ A user can edit all information about all travel ideas he/she has created. 
+ 
+3. SEARCHING OF TRAVEL IDEAS 
+ Searching by destinations or tags. 
+ For destination, users have an option to do a partial search.  For example, if 
+"Hong" is used as the search keyword, "Hong Kong" should be part of the matched 
+results (if such entry is present in the database). 
+ Search results should have the following information for each entry returned: title 
+of the planned trip, destination, date (MM/YYYY), and number of comments.  
+ For all queries, display a total count of matched records. 
+ 
+4. COMMENT ON TRAVEL IDEA 
+ Users can comment on their own (or others') travel ideas. 
+ The comment list will be like a Facebook comment section, which implies that 
+AJAX will be used.  
+- http://www.dynamicajax.com/chat.php  
+- http://code.tutsplus.com/tutorials/how-to-create-a-simple-web-based-chat-
+application--net-5931  
+ All comments should be escaped and with a maximum length of 255 characters. 
+ A user viewing the same travel idea will receive new comment updates when 
+someone posts any new comments. 
+ The comments should be shown in reverse-chronological order (i.e., latest 
+comments first), while pagination is not necessary. 
+ 
+ 
+Page 3 of 8 
+ 
+5. DATA VALIDATIONS 
+ Data validations are required for user account management and travel idea creation. 
+ 
+6. WEB API MASHUPS 
+ TWO modules that perform mash-up with any TWO web APIs relating to 
+traveling or trip (see The Public APIs List website https://apislist.com/ ).  
+ Hint: many web APIs relating to traveling are keyword-based. In our website, the 
+tags, start date, end date and/or destination specified in each travel idea can 
+possibly form those keywords. 
+ Content in the comments might be useful for the mash-ups as well. 
+ For example (just an example - you don't have to adopt it; please feel free to 
+propose to use another API if you wish), you may implement a mash-up with the 
+Amadeus Self-Service APIs (Hotel Search API): 
+https://developers.amadeus.com/self-service 
+https://developers.amadeus.com/self-service/category/hotels/api-doc/hotel-
+search  
+(Hint: if you use the Amadeus APIs, you may use the AirLabs’s Aviation APIs 
+(https://airlabs.co/docs/ ), or any other APIs like that, to convert city names 
+that users provide to city codes, which Amadeus API uses for searching.) 
+ 
+A sample usage scenario 
+ A user Ben registers a new account. 
+ Ben logs in with his email and password. 
+ He posts a new Travel Idea “I plan to visit Tokyo Disneyland with my family” 
+with the destination “Tokyo”, start date “April 1, 2023”, end date “April 6, 2023”.  
+ He applies two tags to his idea: “Tokyo”, and “Disneyland”. 
+ After the travel idea creation, a mash-up widget on the right is automatically 
+created and linked to Amadeus’s Hotel Search service, querying the hotel 
+information based on the “Tokyo” tag as the city name (again, you may propose to 
+use a web API other than Amadeus if you wish) 
+ 
+Ben can read the summary in the widget and click on the provided links to get 
+further information. 
+ Another mash-up widget is updated at the same time to provide some other 
+additional information about Ben’s planned trip. 
+ (… to be continued in the next page …) 
+Page 4 of 8 
+ 
+ 
+ He posts a new comment “Can anyone suggest where to find weather forecast?” on 
+his travel idea to ask for help from his friends. 
+ His friend Karen who has already registered logs in. 
+ Karen searches the site by the tag “Disneyland” and finds that Ben already posted 
+a travel idea with this tag. 
+ Karen clicks on Ben’s travel idea and views the comments. 
+ She posts a comment with a link “you can go to https://www.weather-
+forecast.com/locations/Tokyo-1/forecasts/latest to check the weather!”. 
+ Concurrently, Ben and Karen get the comments as they are viewing the same 
+travel idea. 
+ They may continue “chatting” on the same travel idea page. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+Figure 1: Create a travel idea “I plan to visit Tokyo Disneyland with my Family” 
+ 
+Page 5 of 8 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+IMPORTANT NOTES 
+A project group with 3+ members: 
+The above specifications are designed for groups of two members. For those groups 
+which have more than two members, you will need to propose some additional 
+functions (e.g., more advanced features and/or additional mash -up(s) with external 
+web APIs). 
+A project group with one member only (i.e., the “one-person mode”): 
+You may skip Item (4) (“Comment on travel ideas”) and implement only a single 
+mash-up module (with a single web API) in Item (6) (“Web API mashups”). 
+Other topics and technologies: 
+Other than “travel ideas”, you might propose your own topic that is more familiar to 
+your group members; please discuss with us beforehand and prepare the website 
+background and specifications by yourselves. 
+If you decide to use a techn ology (e.g., MVC framework, client -side 
+library/framework, DBMS, etc.) other than those recommended ones, please also 
+discuss with us beforehand. 
+ 
+ 
+Figure 2: Sample layout of the Travel Ideas website. The second mash-up 
+widget (not shown here) might be positioned somewhere under the first widget.  
+
+Page 6 of 8 
+ 
+Roles of group members 
+All the group members should take part in the system design of the website. One of the  
+members will be the project coordinator, who will send an email to the course TA with the 
+group members’ names and their University ID numbers. The followings are the main 
+“deliverables” for the project. 
+ A Group Report (done by the whole group) 
+ Implementations and coding (done by individuals) 
+ A short individual report (done by individuals) 
+ 
+Grading criteria 
+The total mark (60 points) is consisted of the overall project mark (18 points) and the 
+individual mark (42 points).  
+ 
+The overall project mark (18 points) will be given based on the following criteria: 
+  The Group Report [12 points] 
+ Website topic and overview  
+ Details of the two web APIs used 
+ Technologies used 
+ Functional specifications 
+ System design descriptions (diagrams and figures where helpful) 
+ Database design descriptions (diagrams and figures where helpful) 
+ A list and brief descriptions of the modules implemented, and the responsible 
+person for each module (i.e., the work distribution). 
+ 
+ Usability of the final website [6 points] 
+Features, interface design/layout, bugs (if any). 
+ 
+The individual mark (42 points) will be given based on the following criteria: 
+ The Individual Report [8 points] 
+ List of work done by the individual 
+ High-level system design of each module implemented 
+ Module description with relevant screenshots  
+ Program files developed, and a brief descriptions of their purposes 
+ Any other useful information 
+Clarity, completeness; pictures, diagrams, screenshots will be helpful. 
+ 
+Page 7 of 8 
+ 
+ Implementation of modules [18 points] 
+ Correct use and functioning of HTML, CSS, Javascript, jQuery, etc. 
+ Laravel MVC / Ruby on Rails MVC 
+ Data validations 
+Feature count, ease of use, clarity of user interface. 
+ 
+ Quality of implementations [12 points] 
+ Quality of “separations” in all dimensions that have been discussed in the course. 
+ Standard compliance (HTML5) 
+ Quality of module designs  
+Clarity, simplicity, maintainability, extensibility. 
+Coding style: readability/naming/program structure/comments  
+ Peer evaluation (details to be announced) [4 points] 
+ 
+The total mark for each student will be the sum of the group mark and his/her individual mark.  
+ 
+Project schedule and late penalty 
+ 
+1. Names of group members sent to TA: Before February 28, 2026 
+(Note: if you plan to work on your own, please also inform the TA.  If we do not hear 
+from you, we will “pair-up” the remaining students and form the groups for you.) 
+ 
+2. A draft of the group report for TA’s approval (please see the grading criteria for the 
+document structure, you may skip Functional Specification, System Design and 
+Database Design in this draft): Before March 15, 2026 
+ 
+3. Due date of all project deliverables: April 13, 2026 
+ 
+Late penalty: 1 .5 points (out of 6 0), per day. No submission would be accepted after 
+April 30, 2026. 
+ 
+Page 8 of 8 
+ 
+Project deliverables 
+ 
+1. A Group Report 
+2. The Individual Reports 
+3. A ZIP file containing all code and media files you have developed/used and the SQL 
+dump of the database with some test data.  For instructions on how to create a SQL 
+dump of a database, please refer to the following page. 
+https://www.inmotionhosting.com/support/website/phpmyadmin/export-database-
+using-phpmyadmin 
+4. JPG files of screenshots (just in case there are misalignments of the web page caused 
+by different screen resolutions). 
+ 
+ 
+Remarks 
+ Deliverables should be submitted through Moodle on or before the due date. 
+ All files must be zipped into a single package and MUST be named using your student 
+ID (e.g., [UID].zip).  
+ Please read and observe the University Plagiarism Handbook.  
+ 
+ 
+Hints 
+ The project, if the default topic and technologies are adopted, should not be difficult if 
+you are able to do the assignment. 
+o They share a number of similar features: basic website designs, form 
+validations, database access and searching, user authentication, etc. 
+ And, the assignment should be easy if you can do the labs. 
+ So, please consider starting with the labs, and make sure that you understand how the 
+model answers work. 

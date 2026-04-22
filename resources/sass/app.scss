@@ -1,0 +1,221 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Dancing+Script:wght@700&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Custom Styles
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+// Hero Section
+.hero-section {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.85), rgba(59, 130, 246, 0.75)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop') center/cover no-repeat;
+    color: white;
+    padding: 120px 0;
+    margin-top: -1.5rem; /* pull up under navbar gap if any */
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    margin-bottom: 1rem;
+}
+
+.hero-section p.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+// Cards
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.card:hover {
+    box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15) !important;
+}
+
+.card.no-hover:hover {
+    transform: none;
+    box-shadow: none !important;
+}
+
+.card-title {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+// Buttons
+.btn {
+    font-weight: 500;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, $primary, $info);
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(14, 165, 233, 0.2);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 15px rgba(14, 165, 233, 0.4);
+    background: linear-gradient(135deg, lighten($primary, 5%), lighten($info, 5%));
+    color: #fff;
+}
+
+.btn-outline-secondary {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #fff;
+}
+.btn-outline-secondary:hover {
+    background-color: #fff;
+    color: $primary;
+    border-color: #fff;
+}
+
+// Action Buttons (Table/List)
+.action-btn {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-width: 60px;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+// Navbar
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05) !important;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    color: $primary !important;
+    font-weight: 700;
+}
+.brand-gradient {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 2.2rem !important;
+    background: linear-gradient(135deg, #0ea5e9, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 0.2rem;
+}
+.nav-link {
+    font-weight: 500;
+    color: #64748b !important;
+    transition: color 0.2s ease;
+}
+.nav-link:hover {
+    color: $primary !important;
+}
+
+// Detail Page Highlights
+.detail-hero {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 2rem;
+    margin-bottom: -100px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.detail-content-wrap {
+    position: relative;
+    z-index: 10;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.info-icon-box {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-right: 15px;
+    font-size: 1.25rem;
+}
+
+.bg-soft-primary { background-color: rgba(14, 165, 233, 0.1); color: #0ea5e9; }
+.bg-soft-success { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
+.bg-soft-warning { background-color: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.book-now-card {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+}
+
+.book-now-card .btn-primary {
+    background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+    border: none;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+// Footer
+.footer {
+    background: #1e293b;
+    color: #f1f5f9;
+    padding: 3rem 0;
+    margin-top: auto;
+}
+
